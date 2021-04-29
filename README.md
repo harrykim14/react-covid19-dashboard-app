@@ -12,6 +12,14 @@
 
 ## 여러가지 차트 예제를 그려보며 Chart.js 맛보기
 
+<details>
+<summary>(1) Line Chart</summary>
+<div markdown="1-1">
+
+<br/>
+<image src="https://user-images.githubusercontent.com/67398691/116504620-abeeb800-a8f3-11eb-9e6a-18945b961cf7.png" alt="line chart" width="600px" />
+
+
 ```typescript
 import React from "react";
 import { Line } from "react-chartjs-2";
@@ -41,3 +49,147 @@ const LinePlot = () => {
 
 export default LinePlot;
 ```
+
+</div>
+</details>
+
+<details>
+<summary>(2) Pie Chart and Dougnut Chart</summary>
+<div markdown="1-2">
+  
+<br/>
+<image src="https://user-images.githubusercontent.com/67398691/116504749-038d2380-a8f4-11eb-9de2-4c7c36da6e2c.PNG" alt="pie chart" width="600px" />
+<image src="https://user-images.githubusercontent.com/67398691/116504766-10117c00-a8f4-11eb-82d0-d4d5839156d4.png" alt="pie chart" width="600px" />
+
+```typescript
+import React from "react";
+import { Pie, Doughnut } from "react-chartjs-2";
+import { ChartData } from "chart.js";
+
+const data: ChartData = {
+  labels: ["Windows", "Mac", "Linux"],
+  datasets: [
+    {
+      label: "OS Percentage",
+      data: [90, 7, 3],
+      backgroundColor: ["#4169e1", "#ff1493", "#FFCE56"],
+      hoverBackgroundColor: ["#36A2EB", "FF6384", "FFCE56"],
+      borderColor: ["transparent", "transparent", "transparent"],
+      pointBorderWidth: 10,
+    },
+  ],
+};
+
+const PiePlot: React.FC = () => {
+  return (
+    <div>
+      <Pie data={data} type="pie" />
+      <Doughnut data={data} type="doughnut" />
+    </div>
+  );
+};
+
+export default PiePlot;
+```
+
+</div>
+</details>
+
+<details>
+<summary>(3) Bar Chart (Vertial and Horizontal)</summary>
+<div markdown="1-3">
+
+<br/>
+<image src="https://user-images.githubusercontent.com/67398691/116504726-f839f800-a8f3-11eb-8c58-6739f2709515.png" alt=" chart" width="600px" />
+
+```typescript
+import React from "react";
+import { Bar } from "react-chartjs-2";
+import { ChartData } from "chart.js";
+
+const data: ChartData = {
+  labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+  datasets: [
+    {
+      label: "Demo Bar Plot",
+      backgroundColor: "#20b2aa",
+      borderColor: "transparent",
+      hoverBackgroundColor: "#5f9ea0",
+      data: [50, 30, 70, 15, 50, 0, 100],
+    },
+  ],
+};
+const options = {
+  indexAxis: "y",
+};
+
+const BarPlot: React.FC = () => {
+  return (
+    <div>
+      <Bar data={data} type="bar" />
+      <Bar data={data} type="bar" options={options} />
+    </div>
+  );
+};
+
+export default BarPlot;
+```
+
+</div>
+</details>
+
+<details>
+<summary>(4) Radar Chart</summary>
+<div markdown="1-4">
+ 
+<br/>
+<image src="https://user-images.githubusercontent.com/67398691/116504707-ea847280-a8f3-11eb-96ad-bc6a3eb70708.png" alt="radar chart" width="600px" />
+
+```typescript
+import React from "react";
+import { Radar } from "react-chartjs-2";
+import { ChartData } from "chart.js";
+
+const data: ChartData = {
+  labels: [
+    "React",
+    "Vue",
+    "Angular",
+    "JavaScript",
+    "TypeScript",
+    "Redux",
+    "REST API",
+  ],
+  datasets: [
+    {
+      label: "Person A",
+      backgroundColor: "rgba(179, 181, 198, 0.2)",
+      borderColor: "#008b8b",
+      pointBackgroundColor: "#008b8b",
+      pointBorderColor: "#fff",
+      data: [100, 50, 30, 90, 50, 70, 40],
+    },
+    {
+      label: "Person B",
+      backgroundColor: "rgba(179, 181, 198, 0.2)",
+      borderColor: "#ff1493",
+      pointBackgroundColor: "#ff1493",
+      pointBorderColor: "#fff",
+      data: [10, 30, 100, 10, 100, 70, 60],
+    },
+  ],
+};
+
+const RadarPlot: React.FC = () => {
+  return (
+    <div>
+      <Radar type="radar" data={data} />
+    </div>
+  );
+};
+
+export default RadarPlot;
+```
+
+</div>
+</details>
