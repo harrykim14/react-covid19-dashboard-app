@@ -290,3 +290,15 @@ npm install react-chartjs-2
 npm install react-countup
 npm install react-icons
 ```
+
+
+### Redux의 흐름
+
+<img src="https://user-images.githubusercontent.com/67398691/116842721-7a8a2b00-ac18-11eb-82ce-1721fd1edce9.jpg" width="700" />
+
+- React 컴포넌트에서 **(1) dispatch를 실행하여 state를 변경하는 루트**와 **(2) store의 state를 읽어들이는 루트**가 있다
+
+<img src="https://user-images.githubusercontent.com/67398691/116842751-942b7280-ac18-11eb-8712-c8ba2de36439.jpg" width="700" />
+
+- Redux Tool Kit(RTK)은 복수의 state-reducer 세트(slice)를 가질 수 있다
+- useSelector, useDispatch와 같은 RTK 함수를 통해 각각의 slice에 접근하여 slice내 state를 변경하거나 참조할 수 있다
