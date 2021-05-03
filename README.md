@@ -19,13 +19,6 @@
 <br/>
 <image src="https://user-images.githubusercontent.com/67398691/116504620-abeeb800-a8f3-11eb-9e6a-18945b961cf7.png" alt="line chart" width="600px" />
 
-<details>
-<summary>(1) Line Chart</summary>
-<div markdown="1-1">
-
-<br/>
-<image src="https://user-images.githubusercontent.com/67398691/116504620-abeeb800-a8f3-11eb-9e6a-18945b961cf7.png" alt="line chart" width="600px" />
-
 ```typescript
 import React from "react";
 import { Line } from "react-chartjs-2";
