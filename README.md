@@ -290,3 +290,85 @@ npm install react-chartjs-2
 npm install react-countup
 npm install react-icons
 ```
+
+### Redux의 흐름
+
+<img src="https://user-images.githubusercontent.com/67398691/116842721-7a8a2b00-ac18-11eb-82ce-1721fd1edce9.jpg" width="700" />
+
+- React 컴포넌트에서 **(1) dispatch를 실행하여 state를 변경하는 루트**와 **(2) store의 state를 읽어들이는 루트**가 있다
+
+<img src="https://user-images.githubusercontent.com/67398691/116842751-942b7280-ac18-11eb-8712-c8ba2de36439.jpg" width="700" />
+
+- Redux Tool Kit(RTK)은 복수의 state-reducer 세트(slice)를 가질 수 있다
+- useSelector, useDispatch와 같은 RTK 함수를 통해 각각의 slice에 접근하여 slice내 state를 변경하거나 참조할 수 있다
+
+### redux-typescirpt 템플릿에서 제공하는 counterSlice.ts를 뜯어보며 Redux의 개념을 알아보기
+
+```typescript
+// /src/features/counter/counterSlice.ts
+
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState, AppThunk } from "../../app/store";
+import { fetchCount } from "./counterAPI";
+
+export interface CounterState {
+  value: number;
+  status: "idle" | "loading" | "failed";
+} // CounterState의 인터페이스 타입 정의
+
+const initialState: CounterState = {
+  value: 0,
+  status: "idle",
+};
+
+export const incrementAsync = createAsyncThunk(
+  "counter/fetchCount",
+  async (amount: number) => {
+    const response = await fetchCount(amount);
+    return response.data;
+  }
+);
+
+export const counterSlice = createSlice({
+  name: "counter", // slice의 이름 설정
+  initialState, // 최초값 설정
+  reducers: {
+    // action 값들을 설정
+    increment: (state) => {
+      state.value += 1;
+    },
+    decrement: (state) => {
+      state.value -= 1;
+    },
+    incrementByAmount: (state, action: PayloadAction<number>) => {
+      state.value += action.payload;
+    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(incrementAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(incrementAsync.fulfilled, (state, action) => {
+        state.status = "idle";
+        state.value += action.payload;
+      });
+  },
+});
+
+export const { increment, decrement, incrementByAmount } = counterSlice.actions; // 컴포넌트에서 사용할 수 있도록 export
+
+export const selectCount = (state: RootState) => state.counter.value; // 컴포넌트에서 state 값을 참조하기 위한 함수
+
+export const incrementIfOdd = (amount: number): AppThunk => (
+  dispatch,
+  getState
+) => {
+  const currentValue = selectCount(getState());
+  if (currentValue % 2 === 1) {
+    dispatch(incrementByAmount(amount));
+  }
+};
+
+export default counterSlice.reducer;
+```
