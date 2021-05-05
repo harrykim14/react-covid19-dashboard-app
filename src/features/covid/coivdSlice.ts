@@ -1,10 +1,10 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-import { RootState } from "../../app/store";
-import dataJson from "./data.json";
-import dataJsonDaily from "./dataDaily.json";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+import { RootState } from '../../app/store';
+import dataJson from './data.json';
+import dataJsonDaily from './dataDaily.json';
 
-const apiUrl = "https://covid19.mathdro.id/api";
+const apiUrl = 'https://covid19.mathdro.id/api';
 
 type APIDATA = typeof dataJson;
 type APIDATADAILY = typeof dataJsonDaily;
@@ -17,17 +17,17 @@ type covidState = {
 
 const initialState: covidState = {
   data: dataJson,
-  country: "",
+  country: '',
   dailyData: dataJsonDaily,
 };
 
-export const fetchAsyncGet = createAsyncThunk("covid/get", async () => {
+export const fetchAsyncGet = createAsyncThunk('covid/get', async () => {
   const { data } = await axios.get<APIDATA>(apiUrl);
   return data;
 });
 
 export const fetchAsyncGetDaily = createAsyncThunk(
-  "covid/getDaily",
+  'covid/getDaily',
   async () => {
     const { data } = await axios.get<APIDATADAILY>(`${apiUrl}/daily`);
     return data;
@@ -35,7 +35,7 @@ export const fetchAsyncGetDaily = createAsyncThunk(
 );
 
 export const fetchAsyncGetCountry = createAsyncThunk(
-  "covid/getCountry",
+  'covid/getCountry',
   async (country: string) => {
     let dynamicUrl = apiUrl;
     if (country) {
@@ -47,7 +47,7 @@ export const fetchAsyncGetCountry = createAsyncThunk(
 );
 
 const covidSlice = createSlice({
-  name: "covid",
+  name: 'covid',
   initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {

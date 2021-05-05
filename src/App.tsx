@@ -1,15 +1,11 @@
 import React from 'react';
-import Cards from './features/covid/Cards/Cards'
+import DashBoard from './features/covid/DashBoard/DashBoard';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Cards />
-      </header>
-    </div>
-  );
+const App = () => {
+  return ( 
+  <DashBoard /> 
+  )
 }
 
 export default App;

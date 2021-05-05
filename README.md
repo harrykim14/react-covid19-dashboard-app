@@ -20,19 +20,19 @@
 <image src="https://user-images.githubusercontent.com/67398691/116504620-abeeb800-a8f3-11eb-9e6a-18945b961cf7.png" alt="line chart" width="600px" />
 
 ```typescript
-import React from "react";
-import { Line } from "react-chartjs-2";
-import { ChartData } from "chart.js";
+import React from 'react';
+import { Line } from 'react-chartjs-2';
+import { ChartData } from 'chart.js';
 
 const data: ChartData = {
-  labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
   datasets: [
     {
-      label: "Demo Line Plot",
+      label: 'Demo Line Plot',
       data: [5, 6, 9, 15, 30, 40, 80],
       fill: true,
-      backgroundColor: "#008080",
-      borderColor: "#7fffd4",
+      backgroundColor: '#008080',
+      borderColor: '#7fffd4',
       pointBorderWidth: 10,
     },
   ],
@@ -61,19 +61,19 @@ export default LinePlot;
 <image src="https://user-images.githubusercontent.com/67398691/116504766-10117c00-a8f4-11eb-82d0-d4d5839156d4.png" alt="pie chart" width="600px" />
 
 ```typescript
-import React from "react";
-import { Pie, Doughnut } from "react-chartjs-2";
-import { ChartData } from "chart.js";
+import React from 'react';
+import { Pie, Doughnut } from 'react-chartjs-2';
+import { ChartData } from 'chart.js';
 
 const data: ChartData = {
-  labels: ["Windows", "Mac", "Linux"],
+  labels: ['Windows', 'Mac', 'Linux'],
   datasets: [
     {
-      label: "OS Percentage",
+      label: 'OS Percentage',
       data: [90, 7, 3],
-      backgroundColor: ["#4169e1", "#ff1493", "#FFCE56"],
-      hoverBackgroundColor: ["#36A2EB", "FF6384", "FFCE56"],
-      borderColor: ["transparent", "transparent", "transparent"],
+      backgroundColor: ['#4169e1', '#ff1493', '#FFCE56'],
+      hoverBackgroundColor: ['#36A2EB', 'FF6384', 'FFCE56'],
+      borderColor: ['transparent', 'transparent', 'transparent'],
       pointBorderWidth: 10,
     },
   ],
@@ -102,24 +102,24 @@ export default PiePlot;
 <image src="https://user-images.githubusercontent.com/67398691/116504726-f839f800-a8f3-11eb-8c58-6739f2709515.png" alt=" chart" width="600px" />
 
 ```typescript
-import React from "react";
-import { Bar } from "react-chartjs-2";
-import { ChartData } from "chart.js";
+import React from 'react';
+import { Bar } from 'react-chartjs-2';
+import { ChartData } from 'chart.js';
 
 const data: ChartData = {
-  labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
   datasets: [
     {
-      label: "Demo Bar Plot",
-      backgroundColor: "#20b2aa",
-      borderColor: "transparent",
-      hoverBackgroundColor: "#5f9ea0",
+      label: 'Demo Bar Plot',
+      backgroundColor: '#20b2aa',
+      borderColor: 'transparent',
+      hoverBackgroundColor: '#5f9ea0',
       data: [50, 30, 70, 15, 50, 0, 100],
     },
   ],
 };
 const options = {
-  indexAxis: "y",
+  indexAxis: 'y',
 };
 
 const BarPlot: React.FC = () => {
@@ -145,35 +145,35 @@ export default BarPlot;
 <image src="https://user-images.githubusercontent.com/67398691/116504707-ea847280-a8f3-11eb-96ad-bc6a3eb70708.png" alt="radar chart" width="600px" />
 
 ```typescript
-import React from "react";
-import { Radar } from "react-chartjs-2";
-import { ChartData } from "chart.js";
+import React from 'react';
+import { Radar } from 'react-chartjs-2';
+import { ChartData } from 'chart.js';
 
 const data: ChartData = {
   labels: [
-    "React",
-    "Vue",
-    "Angular",
-    "JavaScript",
-    "TypeScript",
-    "Redux",
-    "REST API",
+    'React',
+    'Vue',
+    'Angular',
+    'JavaScript',
+    'TypeScript',
+    'Redux',
+    'REST API',
   ],
   datasets: [
     {
-      label: "Person A",
-      backgroundColor: "rgba(179, 181, 198, 0.2)",
-      borderColor: "#008b8b",
-      pointBackgroundColor: "#008b8b",
-      pointBorderColor: "#fff",
+      label: 'Person A',
+      backgroundColor: 'rgba(179, 181, 198, 0.2)',
+      borderColor: '#008b8b',
+      pointBackgroundColor: '#008b8b',
+      pointBorderColor: '#fff',
       data: [100, 50, 30, 90, 50, 70, 40],
     },
     {
-      label: "Person B",
-      backgroundColor: "rgba(179, 181, 198, 0.2)",
-      borderColor: "#ff1493",
-      pointBackgroundColor: "#ff1493",
-      pointBorderColor: "#fff",
+      label: 'Person B',
+      backgroundColor: 'rgba(179, 181, 198, 0.2)',
+      borderColor: '#ff1493',
+      pointBackgroundColor: '#ff1493',
+      pointBorderColor: '#fff',
       data: [10, 30, 100, 10, 100, 70, 60],
     },
   ],
@@ -200,28 +200,28 @@ export default RadarPlot;
 <image src="https://user-images.githubusercontent.com/67398691/116535415-b1adc300-a91e-11eb-901b-ac6c8ea20044.png" alt="bubble chart" width="600px" />
 
 ```typescript
-import React from "react";
-import { Bubble } from "react-chartjs-2";
-import { ChartData } from "chart.js";
+import React from 'react';
+import { Bubble } from 'react-chartjs-2';
+import { ChartData } from 'chart.js';
 
 const data: ChartData = {
   datasets: [
     {
-      label: "React",
-      backgroundColor: "#4169e1",
-      borderColor: "transparent",
+      label: 'React',
+      backgroundColor: '#4169e1',
+      borderColor: 'transparent',
       data: [{ x: 20, y: 866, r: 107.0 }],
     },
     {
-      label: "Angular",
-      backgroundColor: "#c71585",
-      borderColor: "transparent",
+      label: 'Angular',
+      backgroundColor: '#c71585',
+      borderColor: 'transparent',
       data: [{ x: 30, y: 389, r: 5.8 }],
     },
     {
-      label: "Vue",
-      backgroundColor: "#008080",
-      borderColor: "transparent",
+      label: 'Vue',
+      backgroundColor: '#008080',
+      borderColor: 'transparent',
       data: [{ x: 10, y: 749, r: 23.6 }],
     },
   ],
@@ -231,13 +231,13 @@ const options = {
   title: {
     display: true,
     fontSize: 18,
-    text: "NPM Downloads comparison (global)",
+    text: 'NPM Downloads comparison (global)',
   },
   scales: {
     y: {
       scaleLabel: {
         display: true,
-        labelString: "Number of job offer in LinkedInt (Japan)",
+        labelString: 'Number of job offer in LinkedInt (Japan)',
         fontSize: 18,
       },
       ticks: {
@@ -249,7 +249,7 @@ const options = {
     x: {
       scaleLabel: {
         display: true,
-        labelString: "Learning Cost",
+        labelString: 'Learning Cost',
         fontSize: 18,
       },
       ticks: {
@@ -307,22 +307,22 @@ npm install react-icons
 ```typescript
 // /src/features/counter/counterSlice.ts
 
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState, AppThunk } from "../../app/store";
-import { fetchCount } from "./counterAPI";
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState, AppThunk } from '../../app/store';
+import { fetchCount } from './counterAPI';
 
 export interface CounterState {
   value: number;
-  status: "idle" | "loading" | "failed";
+  status: 'idle' | 'loading' | 'failed';
 } // CounterState의 인터페이스 타입 정의
 
 const initialState: CounterState = {
   value: 0,
-  status: "idle",
+  status: 'idle',
 };
 
 export const incrementAsync = createAsyncThunk(
-  "counter/fetchCount",
+  'counter/fetchCount',
   async (amount: number) => {
     const response = await fetchCount(amount);
     return response.data;
@@ -330,7 +330,7 @@ export const incrementAsync = createAsyncThunk(
 );
 
 export const counterSlice = createSlice({
-  name: "counter", // slice의 이름 설정
+  name: 'counter', // slice의 이름 설정
   initialState, // 최초값 설정
   reducers: {
     // action 값들을 설정
@@ -347,10 +347,10 @@ export const counterSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(incrementAsync.pending, (state) => {
-        state.status = "loading";
+        state.status = 'loading';
       })
       .addCase(incrementAsync.fulfilled, (state, action) => {
-        state.status = "idle";
+        state.status = 'idle';
         state.value += action.payload;
       });
   },
@@ -399,6 +399,22 @@ return (
 ```
 
 - 해당 카드 컴포넌트는 [React CountUp 모듈](https://www.npmjs.com/package/react-countup)을 사용하였음
+
+</div>
+</details>
+
+<details>
+<summary> 2. 대쉬보드에 필요한 차트들을 생성 </summary>
+<div markdown="dashboard-2">
+
+<img src="https://user-images.githubusercontent.com/67398691/117099782-1056bf00-adad-11eb-9fc7-fc8b04cd8b4c.PNG" alt="Worldwide dashboard" width="800">
+
+<br/>
+
+<img src="https://user-images.githubusercontent.com/67398691/117099840-32504180-adad-11eb-876a-bdb8e125a245.PNG" alt="Worldwide dashboard" width="800">
+
+- 막대 차트와 선 그래프는 각각 해당 국가의 데이터와 전 세계 데이터를 나타냄
+- 도넛 차트는 모든 상태에 맞춰 변경됨
 
 </div>
 </details>
