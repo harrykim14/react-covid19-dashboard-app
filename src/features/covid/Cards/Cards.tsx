@@ -2,7 +2,7 @@ import React from "react";
 import CountUp from "react-countup";
 
 import { useSelector } from "react-redux";
-import { fetchAsyncGetDaily, selectDaily } from "../covidSlice";
+import { selectDaily } from "../covidSlice";
 
 import { Card, CardContent, Typography, Grid } from "@material-ui/core";
 import { MdLocalHospital } from "react-icons/md";

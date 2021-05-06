@@ -18,9 +18,9 @@ const SwitchCountry: React.FC = () => {
   const dispatch = useDispatch();
 
   const countries = [
+    'south-korea',
     'japan',
     'china',
-    'south-korea',
     'us',
     'france',
     'italy',

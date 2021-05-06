@@ -34,13 +34,14 @@ const PieChart: React.FC = () => {
     <Doughnut
       data={pieChartData}
       type="doughnut"
+      width={50}
       options={{
-        legend: {
-          position: 'bottom',
-          labels: {
-            boxWidth: 15,
-          },
+        plugins: {
+            legend: {
+                position: 'bottom'
+            }
         },
+
       }}
     />
   );
