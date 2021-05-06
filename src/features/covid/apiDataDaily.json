@@ -1,0 +1,17 @@
+[
+  {
+    "ID": "f7596b4c-6c75-4ac4-86fb-8895fef044fc",
+    "Country": "Korea (South)",
+    "CountryCode": "KR",
+    "Province": "",
+    "City": "",
+    "CityCode": "",
+    "Lat": "35.91",
+    "Lon": "127.77",
+    "Confirmed": 124945,
+    "Deaths": 1847,
+    "Recovered": 114944,
+    "Active": 8154,
+    "Date": "2021-05-06T00:00:00Z"
+  }
+]
